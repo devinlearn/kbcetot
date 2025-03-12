@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Ahmad Yassin, S. Kom</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            .gambar {
+                border: 10px solid #f4f6f6;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                transition: all 0.2s ease-in;
+            }
+
+            .gambar:hover {
+                transform: rotate(-10deg);
+                box-shadow: none;
+                filter: grayscale(100%);
+                backdrop-filter: blur(10px);
+            }
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+            <div class="container px-5">
+                <a class="navbar-brand fw-bold" href="#page-top">KBCETOT JUARTOT ✌</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="bi-list"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                        <!-- <li class="nav-item"><a class="nav-link me-lg-3" href="#qta">Update Rak QTA</a></li> -->
+                        <!-- <li class="nav-item"><a class="nav-link me-lg-3" href="#download">Download</a></li> -->
+                    </ul>
+                    <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+                        <span class="d-flex align-items-center">
+                            <i class="bi bi-person-bounding-box me-2"></i>
+                            <span class="small">Created with ❤ by Ahmad Yassin, S. Kom.</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- Mashead header-->
+        <header class="masthead">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6">
+                        <!-- Mashead text and app badges-->
+                        <div class="mb-5 mb-lg-0 text-center text-lg-start">
+                            <h1 class="mb-3">Seberat apa pun masalahmu, jangan lupa <span class="text-danger">mengeluh</span>.</h1>
+                            <div class="container">
+                                <div class="mb-3">
+                                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                        Yok pilih mau pake <strong>file</strong> atau paste mentahannya.
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                    <div class="input-group">
+                                        <input class="form-control" type="file" id="formFile" accept=".txt">
+                                        <button class="btn btn-danger" type="button" onclick="location.reload()">Reset File</button>
+                                    </div>
+                                </div>
+                                <div class="form-floating">
+                                    <textarea class="form-control text-center" placeholder="Paste kesini kawan.." id="teks" style="height: 20vh"></textarea>
+                                    <label for="floatingTextarea2">Atau paste kesini kawan..</label>
+                                </div>
+                                <div class="d-grid gap-2 mt-3">
+                                    <a id="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary mb-2 text-uppercase" type="button">Pencet Langsung Gass</a>
+                                </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Ini Hasilnya Kawan</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <textarea id="result" class="form-control result text-center mb-3" style="height: 50vh"></textarea>
+          <div class="d-grid gap-2">
+            <button onclick="copy()" type="button" class="btn btn-outline-success">Langsung Copy Kawan</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+                            </div>
+                            <!-- <h1 class="display-1 lh-1 mb-3">Showcase your app beautifully.</h1>
+                            <p class="lead fw-normal text-muted mb-5">Launch your mobile app landing page faster with this free, open source theme from Start Bootstrap!</p>
+                            <div class="d-flex flex-column flex-lg-row align-items-center">
+                                <a class="me-lg-3 mb-4 mb-lg-0" href="#!"><img class="app-badge" src="assets/img/google-play-badge.svg" alt="..." /></a>
+                                <a href="#!"><img class="app-badge" src="assets/img/app-store-badge.svg" alt="..." /></a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="display-4 lh-1 mb-4">QTA Pake Form Ini!</h2>
+                        <div class="input-group">
+                            <input class="form-control" type="file" id="formQTA" accept=".txt">
+                            <a href="#qta" class="btn btn-danger" type="button" onclick="location.reload()">Reset File</a>
+                        </div>
+                        <textarea class="form-control my-3 text-center" id="teksQTA" style="height: 20vh"></textarea>
+                        <div class="d-grid gap-2 mt-3">
+                            <button id="btn2" class="btn btn-primary me-md-2" data-bs-toggle="modal" data-bs-target="#modal2" type="button">Gaskeun</button>
+                        </div>
+                        <!-- <img src="assets/img/kbcs.jpg" class="gambar img-fluid mx-auto d-block" style="width: 80vh;"> -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Quote/testimonial aside-->
+        <aside class="text-center bg-gradient-primary-to-secondary">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-xl-8">
+                        <div class="h2 fs-1 text-white mb-4">"Jangan mengulangi kesalahan yang sama. Masih banyak kesalahan-kesalahan lain yang perlu dicoba"</div>
+                        <img src="assets/img/tnw-logo.svg" alt="..." style="height: 3rem" />
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- App features section-->
+        <!-- Basic features section-->
+        <section class="bg-light" id="qta">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
+                    <!-- <div class="col-12 col-lg-5">
+                        <h2 class="display-4 lh-1 mb-4">Convert QTA</h2>
+                        <div class="input-group">
+                            <input class="form-control" type="file" id="formQTA" accept=".txt">
+                            <a href="#qta" class="btn btn-danger" type="button" onclick="location.reload()">Reset File</a>
+                        </div>
+                        <textarea class="form-control my-3 text-center" id="teksQTA" style="height: 100px"></textarea>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button id="btn2" class="btn btn-primary me-md-2" data-bs-toggle="modal" data-bs-target="#modal2" type="button">Gaskeun</button>
+                        </div>
+                    </div> -->
+                    <div class="col-sm-8 col-md-6">
+                        <div class="px-5 px-sm-0"><img class="img-fluid d-block mx-auto" src="assets/img/bg (2).png"/></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Modal 2 -->
+            <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Ini Hasilnya Kawan</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <textarea id="result2" class="form-control result text-center mb-3" style="height: 50vh"></textarea>
+                        <div class="d-grid gap-2">
+                            <button onclick="copy2()" type="button" class="btn btn-outline-success">Langsung Copy Kawan</button>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        <!-- Call to action section-->
+        <section class="cta">
+            <div class="cta-content">
+                <div class="container px-5">
+                    <h2 class="text-white display-1 lh-1 mb-4">
+                        Aku bukan pemalas.
+                        <br />
+                        Cuma lagi pake mode<br /> hemat daya aja.
+                    </h2>
+                    <a class="btn btn-outline-light py-3 px-4 rounded-pill" href="/" target="_blank">Hehehe</a>
+                </div>
+            </div>
+        </section>
+        <!-- App badge section-->
+        <section class="bg-gradient-primary-to-secondary" id="download">
+            <div class="container px-5">
+                <h2 class="text-center text-white font-alt mb-4">Get the app now!</h2>
+                <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center">
+                    <a class="me-lg-3 mb-4 mb-lg-0" href="#!"><img class="app-badge" src="assets/img/google-play-badge.svg" alt="..." /></a>
+                    <a href="#!"><img class="app-badge" src="assets/img/app-store-badge.svg" alt="..." /></a>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="bg-black text-center py-5">
+            <div class="container px-5">
+                <div class="text-white-50 small">
+                    <div class="mb-2">&copy; KBCS Juara ✌ 2024. All Rights Reserved.</div>
+                    <a href="#!">Privacy</a>
+                    <span class="mx-1">&middot;</span>
+                    <a href="#!">Terms</a>
+                    <span class="mx-1">&middot;</span>
+                    <a href="#!">FAQ</a>
+                </div>
+            </div>
+        </footer>
+        <script>
+            // formUpload
+            let upload = document.getElementById('formFile');
+            let upload2 = document.getElementById('formQTA');
+            // TextArea
+            let teks = document.getElementById('teks');
+            let mentahan = document.getElementById('teksQTA');
+            // Tombol
+            let tombol = document.getElementById('btn');
+            let pencetan = document.getElementById('btn2');
+            // FormHasil
+            let hasilnye = document.getElementById('result');
+            let udah = document.getElementById('result2');
+    
+            upload.addEventListener('change', ()=> {
+                let fr = new FileReader();
+                fr.readAsText(upload.files[0]);
+                fr.onload = function () {
+                    teks.innerHTML = fr.result;
+                }
+            })
+
+            upload2.addEventListener('change', ()=> {
+                let fr = new FileReader();
+                fr.readAsText(upload2.files[0]);
+                fr.onload = function () {
+                    mentahan.innerHTML = fr.result;
+                }
+            })
+    
+            function Jebek() {
+                let timpa = teks.value.trim();
+                let barcodes = timpa.split("\n").map(str => str.replace(/\s/g, ''));
+                barcodes.sort((a,b)=> a.substr(0, 7).localeCompare(b.substr(0, 7)));
+                console.log(barcodes);
+                let newBarcodes = barcodes.map(a => `${a.slice(-7)},1\n`);        
+                hasilnye.innerHTML = newBarcodes.join('');
+                Swal.fire({
+                    icon: "success",
+                    title: "Berhasil, berhasil, horee!",
+                    showConfirmButton: false,
+                    timer: 1100
+                });
+            }
+            tombol.addEventListener('click', Jebek);
+
+            function convertQTA() {
+                let arry = mentahan.value.trim();
+                let barcodes = arry.split("\n").map(str => str.replace(/\s/g, ''));
+                barcodes.sort((a,b)=> a.substr(2, 7).localeCompare(b.substr(2, 7)));
+                let newBarcodes = barcodes.map(a => `${a.slice(10)},1\n`);        
+                udah.innerHTML = newBarcodes.join('');
+                Swal.fire({
+                    icon: "success",
+                    title: "Berhasil!",
+                    showConfirmButton: false,
+                    timer: 1100
+                });
+            }
+            pencetan.addEventListener('click', convertQTA);
+    
+            function copy() {
+                let text = document.getElementById("result");
+                text.select();
+                text.setSelectionRange(0,9999);
+                document.execCommand("copy");
+                Swal.fire({
+                    title: "Udh dicopy kawan!!",
+                    text: "Tinggal paste aja ygy..",
+                    icon: "success",
+                    timer: 1600
+                });
+            }
+
+            function copy2() {
+                let text = document.getElementById("result2");
+                text.select();
+                text.setSelectionRange(0,9999);
+                document.execCommand("copy");
+                Swal.fire({
+                    title: "Udh dicopy kawan!!",
+                    text: "Jangan lupa update RAK dulu!!",
+                    icon: "success",
+                    timer: 1800
+                });
+            }
+        </script>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
